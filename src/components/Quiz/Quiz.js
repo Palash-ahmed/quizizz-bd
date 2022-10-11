@@ -1,12 +1,30 @@
 import React from 'react';
+import QuizOption from '../QuizOption/QuizOption';
+import './Quiz.css'
+// import QuizOption from '../QuizOption/QuizOption';
 
 const Quiz = ({quiz}) => {
-    console.log(quiz)
-    const {options, question, correctAnswer} = quiz
+    const {options, question} = quiz
     return (
-        <div>
-            <h1>{question}</h1>
-            <p>{options}{correctAnswer}</p>
+        <div className='quiz-container'>
+            <div className='questions-eye'>
+                <h3 className='heading'>{question}</h3>
+            </div>
+            <div className='option-container'>
+                {
+                    options.map((option, index) => <QuizOption
+                        key = {index}
+                        option = {option}
+                    ></QuizOption>)
+                }
+            </div>
+            {/* <h1>{question}</h1>
+            {
+                options.map(option => <QuizOption
+                    key = {option.id}
+                    option = {option}
+                ></QuizOption>)
+            } */}
             
         </div>
     );

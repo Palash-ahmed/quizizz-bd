@@ -9,7 +9,7 @@ const Card = ({topic}) => {
             <img src={logo} alt="" />
             <div className='card-button'>
             <h4>{name}</h4>
-            <button> <Link to = {`/topic/${id}`}>Start Practice</Link></button>
+            <button className='btn'> <Link to = {`/topic/${id}`}>Start Practice</Link></button>
             </div>
         </div>
     );

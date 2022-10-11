@@ -44,7 +44,7 @@ function App() {
     { path: '*', element: <div>This route is not found, 404</div>}
   ])
   return (
-    <div>
+    <div className='app'>
       <RouterProvider router = {router}></RouterProvider>
     </div>
   );
