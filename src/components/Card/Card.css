@@ -1,0 +1,26 @@
+.card-container{
+    background-color: whitesmoke;
+    border-radius: 10px;
+}
+.card-container img{
+    background-color: rgb(216, 230, 238);
+    width: 260px;
+    height: 250px;
+    margin-left: 10px;
+    margin-top: 10px;
+    border-radius: 5px;
+}
+.card-button{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-left: 10px;
+}
+button{
+    height: 30px;
+    background-color: blue;
+    color: white;
+    font-size: 16px;
+    margin-right: 10px;
+    border-radius: 5px;
+}
