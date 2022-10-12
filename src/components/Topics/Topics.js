@@ -1,19 +1,21 @@
-import React from 'react';
-import { useLoaderData } from 'react-router-dom';
-import Card from '../Card/Card';
-import './Topics.css'
+import React, { useContext } from 'react';
+import Header from '../Header/Header';
+import { QuizContext } from '../Root/Root';
+import Topic from '../Topic/Topic';
 
 const Topics = () => {
-    const quizizz = useLoaderData().data
-    console.log(quizizz);
+    const quizTopics = useContext(QuizContext);
+
+    const quizzesTopics = quizTopics.data;
+
     return (
-        <div className='topics-container'>
-            {
-                quizizz.map(topic => <Card
-                    key = {topic.id}
-                    topic = {topic}
-                ></Card>)
-            }
+        <div>
+            <Header />
+            <div className="grid md:grid-cols-4">
+                {quizzesTopics.map((quizzes) => (
+                    <Topic quizzes={quizzes} key={quizzes.id}></Topic>
+                ))}
+            </div>
         </div>
     );
 };

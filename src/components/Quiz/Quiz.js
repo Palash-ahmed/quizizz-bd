@@ -1,31 +1,21 @@
 import React from 'react';
-import QuizOption from '../QuizOption/QuizOption';
-import './Quiz.css'
-// import QuizOption from '../QuizOption/QuizOption';
+import { useLoaderData } from 'react-router-dom';
+import Quizzes from '../Quizzes/Quizzes';
 
-const Quiz = ({quiz}) => {
-    const {options, question} = quiz
+const Quiz = () => {
+    const quizLoaderData = useLoaderData();
+    const quizLoad = quizLoaderData.data;
+    const { id, name, questions } = quizLoad;
     return (
-        <div className='quiz-container'>
-            <div className='questions-eye'>
-                <h3 className='heading'>{question}</h3>
+        <div>
+            <h1 className="text-center font-semibold text-4xl mt-3 mb-10">
+                Quiz of: {name}
+            </h1>
+            <div>
+                {questions.map((quizzesData) => (
+                    <Quizzes quizzesData={quizzesData} key={id}></Quizzes>
+                ))}
             </div>
-            <div className='option-container'>
-                {
-                    options.map((option, index) => <QuizOption
-                        key = {index}
-                        option = {option}
-                    ></QuizOption>)
-                }
-            </div>
-            {/* <h1>{question}</h1>
-            {
-                options.map(option => <QuizOption
-                    key = {option.id}
-                    option = {option}
-                ></QuizOption>)
-            } */}
-            
         </div>
     );
 };
