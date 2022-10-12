@@ -14,21 +14,21 @@ export const Nav = () => {
                     <li>
                         <Link
                             to="/"
-                            className="font-medium text-white text-xl hover:text-green-600">
+                            className="text-white text-xl hover:text-green-600">
                             Topics
                         </Link>
                     </li>
                     <li>
                         <Link
                             to="/statistics"
-                            className="font-medium text-white text-xl hover:text-green-600">
+                            className="text-white text-xl hover:text-green-600">
                             Statistics
                         </Link>
                     </li>
                     <li>
                         <Link
                             to="/blog"
-                            className="font-medium text-white text-xl hover:text-green-600">
+                            className=" text-white text-xl hover:text-green-600">
                             Blog
                         </Link>
                     </li>
@@ -89,21 +89,21 @@ export const Nav = () => {
                                         <li>
                                             <Link
                                                 to="/"
-                                                className="font-medium text-white hover:text-green-600">
+                                                className=" text-white hover:text-green-600">
                                                 Topics
                                             </Link>
                                         </li>
                                         <li>
                                             <Link
                                                 to="/statistics"
-                                                className="font-medium text-white hover:text-green-600">
+                                                className=" text-white hover:text-green-600">
                                                 Statistics
                                             </Link>
                                         </li>
                                         <li>
                                             <Link
                                                 to="/blog"
-                                                className="font-medium text-white hover:text-green-600">
+                                                className=" text-white hover:text-green-600">
                                                 Blog
                                             </Link>
                                         </li>

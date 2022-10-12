@@ -1,10 +1,10 @@
 import React from 'react';
 import { useLoaderData } from 'react-router-dom';
-import Quizzes from '../Quizzes/Quizzes';
+import QuizizzBD from '../QuizizzBD/QuizizzBD';
 
-const Quiz = () => {
-    const quizLoaderData = useLoaderData();
-    const quizLoad = quizLoaderData.data;
+const QuizDetails = () => {
+    const quizDetailsLoaderData = useLoaderData();
+    const quizLoad = quizDetailsLoaderData.data;
     const { id, name, questions } = quizLoad;
     return (
         <div>
@@ -12,12 +12,12 @@ const Quiz = () => {
                 Quiz of: {name}
             </h1>
             <div>
-                {questions.map((quizzesData) => (
-                    <Quizzes quizzesData={quizzesData} key={id}></Quizzes>
+                {questions.map((QuizizzBDData) => (
+                    <QuizizzBD QuizizzBDData={QuizizzBDData} key={id}></QuizizzBD>
                 ))}
             </div>
         </div>
     );
 };
 
-export default Quiz;
+export default QuizDetails;

@@ -1,19 +1,19 @@
 import React, { useContext } from 'react';
 import Header from '../Header/Header';
-import { QuizContext } from '../Root/Root';
+import { statisticsContext } from '../Root/Root';
 import Topic from '../Topic/Topic';
 
 const Topics = () => {
-    const quizTopics = useContext(QuizContext);
+    const quizTopics = useContext(statisticsContext);
 
-    const quizzesTopics = quizTopics.data;
+    const QuizizzBDTopics = quizTopics.data;
 
     return (
         <div>
             <Header />
             <div className="grid md:grid-cols-4">
-                {quizzesTopics.map((quizzes) => (
-                    <Topic quizzes={quizzes} key={quizzes.id}></Topic>
+                {QuizizzBDTopics.map((QuizizzBD) => (
+                    <Topic QuizizzBD={QuizizzBD} key={QuizizzBD.id}></Topic>
                 ))}
             </div>
         </div>

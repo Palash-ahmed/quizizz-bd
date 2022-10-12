@@ -1,12 +1,12 @@
 import React from 'react';
-import Options from '../Options/Options';
+import Options from '../QuizOptions/QuizOptions';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 
 
-const Quizzes = ({ quizzesData }) => {
-        const { question, options, correctAnswer } = quizzesData;
+const QuizizzBD = ({ QuizizzBDData }) => {
+        const { question, options, correctAnswer } = QuizizzBDData;
     
         const rightAnswer = () => {
            
@@ -15,7 +15,7 @@ const Quizzes = ({ quizzesData }) => {
            
         };
     
-        const correctState = (id) => {
+        const clickForAnswer = (id) => {
             if (id === correctAnswer) {
                 toast.success('Correct Answer',{onClose:200});
                 
@@ -60,7 +60,7 @@ const Quizzes = ({ quizzesData }) => {
                 {options.map((option) => (
                     <Options
                         option={option}
-                        correctState={correctState}>
+                        clickForAnswer={clickForAnswer}>
 
                         </Options>
                 ))}
@@ -69,4 +69,4 @@ const Quizzes = ({ quizzesData }) => {
     );
 };
 
-export default Quizzes;
+export default QuizizzBD;

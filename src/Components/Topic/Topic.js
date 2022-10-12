@@ -1,8 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const Topic = ({ quizzes }) => {
-    const { id, name, logo, total } = quizzes;
+const Topic = ({ QuizizzBD }) => {
+    const { id, name, logo, total } = QuizizzBD;
     return (
         <div>
             <div className="flex h-screen items-center justify-center px-5">

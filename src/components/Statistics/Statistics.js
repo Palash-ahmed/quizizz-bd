@@ -1,21 +1,28 @@
 import React, { useContext } from 'react';
-import { BarChart, Bar, XAxis, YAxis, Tooltip } from 'recharts';
+import { LineChart, Line, XAxis, YAxis,CartesianGrid, Tooltip } from 'recharts';
 
-import { QuizContext } from '../Root/Root';
+import { statisticsContext } from '../Root/Root';
 
 const Statistics = () => {
-    const quizChart = useContext(QuizContext);
-    const data = quizChart.data;
+    const statisticsChart = useContext(statisticsContext);
+    const data = statisticsChart.data;
     return (
         <div>
             <h1 className="text-center font-bold text-2xl text-red-500 my-3">Statistics</h1>
             <div className="flex justify-center w-3/4">
-                <BarChart width={450} height={450} data={data}>
-                    <Bar dataKey="total" fill="#8884d8" />
-                    <XAxis dataKey="total" />
+                <LineChart width={450} height={450} data={data}>
+                    <Line type="monotone" dataKey="total" stroke="#82ca9d" />
+                    <CartesianGrid strokeDasharray="3 3"/>
+                    <XAxis dataKey="name" />
                     <YAxis />
                     <Tooltip />
-                </BarChart>
+                    <Line
+                 type="monotone"
+                 dataKey="total"
+                 stroke="#8884d8"
+                 activeDot={{ r: 8 }}
+                 ></Line>
+                </LineChart>
             </div>
         </div>
     );
