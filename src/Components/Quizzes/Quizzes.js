@@ -3,27 +3,36 @@ import Options from '../Options/Options';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
-const Quizzes = ({ quizzesData }) => {
-    const correctState = (correctData) => {
-        if (correctData === correctAnswer) {
-            toast( <h1>Correct Answer</h1>,
-           {position: toast.POSITION.TOP_CENTER})
-        } else {
-            toast(<h1>Incorrect Answer</h1>,
-           {position: toast.POSITION.TOP_CENTER})
-        }
-    };
-    const { correctAnswer, options, question } = quizzesData;
 
-    const notify = () => {
-        <h1>Text: `Correct Ans Is: ${correctAnswer}`,</h1>
-    };
+
+const Quizzes = ({ quizzesData }) => {
+        const { question, options, correctAnswer } = quizzesData;
+    
+        const rightAnswer = () => {
+           
+            toast.success(`${correctAnswer}`, {onClose:500})
+      
+           
+        };
+    
+        const correctState = (id) => {
+            if (id === correctAnswer) {
+                toast.success('Correct Answer',{onClose:200});
+                
+             
+            }
+            else {
+               
+                toast.error('Wrong Answer',{onClose:200});
+            }
+    
+        }
     return (
-        <div className="bg-slate-200 w-3/4 mx-auto rounded-xl mb-10">
-            <div className="text-center border-orange-500 relative rounded-xl py-5 font-semibold bg-slate-300 my-5">
+        <div className="bg-green-400 w-3/4 mx-auto rounded-xl mb-10">
+            <div className="text-center text-xl border-orange-500 relative rounded-xl py-5 font-bold bg-red-400 my-5">
                 <h1 className="w-3/4 mx-auto">Quiz : {question}</h1>
                 <div className="absolute top-5 right-5">
-                    <button onClick={notify}>
+                    <button onClick={rightAnswer}>
                         <svg
                             xmlns="http://www.w3.org/2000/svg"
                             fill="none"
@@ -47,11 +56,13 @@ const Quizzes = ({ quizzesData }) => {
                 </div>
             </div>
 
-            <div className="grid gap-4 md:grid-cols-2 w-11/12 mx-auto justify-items-center">
+            <div className="grid gap-4 md:grid-cols-1 w-1/2 mx-auto justify-items-center pb-8">
                 {options.map((option) => (
                     <Options
                         option={option}
-                        correctState={correctState}></Options>
+                        correctState={correctState}>
+
+                        </Options>
                 ))}
             </div>
         </div>

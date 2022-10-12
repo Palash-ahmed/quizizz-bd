@@ -8,7 +8,7 @@ const Quiz = () => {
     const { id, name, questions } = quizLoad;
     return (
         <div>
-            <h1 className="text-center font-semibold text-4xl mt-3 mb-10">
+            <h1 className="text-center text-red-500 font-bold text-4xl mt-3 mb-10">
                 Quiz of: {name}
             </h1>
             <div>

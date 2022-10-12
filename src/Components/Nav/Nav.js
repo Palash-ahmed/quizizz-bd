@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { Link } from 'react-router-dom';
 
 export const Nav = () => {
-    const [isMenuOpen, setIsMenuOpen] = useState(false);
+    const [menu, setMenu] = useState(false);
 
     return (
         <div className="px-16 py-8 mx-auto bg-purple-900 md:mb-0 mb-[150px] md:w-full">
@@ -38,7 +38,7 @@ export const Nav = () => {
                         aria-label="Open Menu"
                         title="Open Menu"
                         className="p-2 -mr-1 rounded focus:outline-none focus:shadow-outline hover:bg-white focus:bg-white"
-                        onClick={() => setIsMenuOpen(true)}>
+                        onClick={() => setMenu(true)}>
                         <svg className="w-5 text-red-600" viewBox="0 0 24 24">
                             <path
                                 fill="currentColor"
@@ -54,7 +54,7 @@ export const Nav = () => {
                             />
                         </svg>
                     </button>
-                    {isMenuOpen && (
+                    {menu && (
                         <div className="absolute top-0 left-0 w-full">
                             <div className="p-5 bg-pink-300 rounded shadow-sm">
                                 <div className="flex items-center justify-between mb-4">
@@ -71,7 +71,7 @@ export const Nav = () => {
                                             title="Close Menu"
                                             className="p-2 -mt-2 -mr-2  rounded hover:bg-white focus:bg-green-500 focus:outline-none focus:shadow-outline"
                                             onClick={() =>
-                                                setIsMenuOpen(false)
+                                                setMenu(false)
                                             }>
                                             <svg
                                                 className="w-5 text-white"
