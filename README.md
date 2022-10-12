@@ -51,3 +51,6 @@ Load automatically using Tampermonkey
     The script should now be automatically loaded every time you enter a quizizz.
 
 As we can see on this screenshot, the answer www.quizizz.com has the highest opacity, indicating a valid answer. 
+
+<h1> My github repository link: https://github.com/programming-hero-web-course2/b6-quiz-crackerz-Palash-ahmed.git </h1>
+<h1> Live link: https://tourmaline-eclair-940468.netlify.app </h1>
